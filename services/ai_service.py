@@ -14,7 +14,7 @@ class AIServiceError(Exception):
     """Raised when excuse generation fails."""
 
 
-def generate_excuse(prompt: str) -> str:
+def generate_excuses(prompt) -> list[str]
     api_key = os.getenv("GEMINI_API_KEY")
     if not api_key:
         raise AIServiceError("GEMINI_API_KEY not found")
