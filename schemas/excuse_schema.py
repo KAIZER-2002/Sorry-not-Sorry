@@ -10,11 +10,15 @@ class ExcuseRequest(BaseModel):
     length: str = Field(..., min_length=1, max_length=50)
 
 
-class ExcuseResponse(BaseModel):
-    excuse: str
+class ExcuseItem(BaseModel):
+    text: str
     believability: int
     drama: int
     risk: int
+
+
+class ExcuseResponse(BaseModel):
+    excuses: list[ExcuseItem]
 
 
 class ExcuseHistoryItem(ExcuseResponse):
